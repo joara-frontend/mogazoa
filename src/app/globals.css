@@ -1,26 +1,332 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/**
+ * Mogazoa Design System
+ * Complete Color & Typography System from Figma Design Guide
+ * 
+ * Layer Structure:
+ * 1. @theme - Color scales & Font families (extends Tailwind defaults)
+ * 2. @utility - Semantic typography classes (Header, Body, Caption)
+ * 3. @layer base - HTML element defaults & system behaviors
+ */
+
+/* ============================================================================
+   @theme: Design System Color Tokens & Typography
+   Primary (Orange), Gray, State (Error)
+   ============================================================================ */
+
+@theme {
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Primary */
+  --color-orange-100: #fffcf2;
+  --color-orange-200: #ffe59e;
+  --color-orange-300: #ffcb7b;
+  --color-orange-400: #ffb84d;
+  --color-orange-500: #ff9a00;
+  --color-orange-600: #fd7e35;
+  --color-orange-700: #e56611;
+  --color-orange-800: #bf550e;
+  --color-orange-900: #873c0a;
+
+  /* Gray */
+  --color-gray-100: #f9fafb;
+  --color-gray-200: #eff0f3;
+  --color-gray-300: #dbdce1;
+  --color-gray-400: #c4c6cc;
+  --color-gray-500: #a8abb3;
+  --color-gray-600: #8c8f98;
+  --color-gray-700: #6e727c;
+  --color-gray-800: #4b4f58;
+  --color-gray-900: #2f323a;
+
+  /* State */
+  --color-error: #ff0000;
+
+  --font-sans: var(
+    --font-body-local,
+    "Spoqa Han Sans Neo",
+    system-ui,
+    -apple-system,
+    sans-serif
+  );
+  --font-header: var(--font-header-local, "Cafe24Supermagic", var(--font-sans));
+  --font-mono: "Monaco", "Courier New", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ============================================================================
+   @utility: Semantic Typography Classes
+   Header (1-4), Sub-headline, Body (1-2), Caption
+   Bound font-size + font-weight + line-height as atomic units
+   ============================================================================ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Header 1: 32px
+   ───────────────────────────────────────────────────────────────────────── */
+
+@utility text-header-1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility text-header-1-regular {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Header 2: 28px
+   ───────────────────────────────────────────────────────────────────────── */
+
+@utility text-header-2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: auto;
+}
+
+@utility text-header-2-regular {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Header 3: 24px
+   ───────────────────────────────────────────────────────────────────────── */
+
+@utility text-header-3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: auto;
+}
+
+@utility text-header-3-regular {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Header 4: 20px
+   ───────────────────────────────────────────────────────────────────────── */
+
+@utility text-header-4 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: auto;
+}
+
+@utility text-header-4-regular {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Sub-headline: 18px (Bold, Medium, Regular, Light)
+   ───────────────────────────────────────────────────────────────────────── */
+
+@utility text-subheadline {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: auto;
+}
+
+@utility text-subheadline-medium {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: auto;
+}
+
+@utility text-subheadline-regular {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: auto;
+}
+
+@utility text-subheadline-light {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Body 1: 16px (Bold, Medium, Regular, Light)
+   ───────────────────────────────────────────────────────────────────────── */
+
+@utility text-body-1 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: auto;
+}
+
+@utility text-body-1-medium {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: auto;
+}
+
+@utility text-body-1-regular {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: auto;
+}
+
+@utility text-body-1-light {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Body 2: 14px (Bold, Medium, Regular, Light)
+   ───────────────────────────────────────────────────────────────────────── */
+
+@utility text-body-2 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: auto;
+}
+
+@utility text-body-2-medium {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: auto;
+}
+
+@utility text-body-2-regular {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: auto;
+}
+
+@utility text-body-2-light {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: auto;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Caption: 12px (Bold, Medium, Regular, Light)
+   ───────────────────────────────────────────────────────────────────────── */
+
+@utility text-caption {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: auto;
+}
+
+@utility text-caption-medium {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: auto;
+}
+
+@utility text-caption-regular {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: auto;
+}
+
+@utility text-caption-light {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: auto;
+}
+
+/* ============================================================================
+   @layer base: Foundation Styles & Element Defaults
+   Apply design system to native HTML elements
+   ============================================================================ */
+
+@layer base {
+  /* Root Settings */
+  html {
+    @apply scroll-smooth;
+    font-family: var(--font-sans);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Body Background & Text */
+  body {
+    @apply antialiased;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+  }
+
+  /* Heading Elements - Bind Typography Scales */
+  h1 {
+    @apply text-header-1;
+    font-family: var(--font-header);
+  }
+
+  h2 {
+    @apply text-header-2;
+    font-family: var(--font-header);
+  }
+
+  h3 {
+    @apply text-header-3;
+    font-family: var(--font-header);
+  }
+
+  h4 {
+    @apply text-header-4;
+    font-family: var(--font-header);
+  }
+
+  h5 {
+    @apply text-subheadline;
+    font-family: var(--font-header);
+  }
+
+  h6 {
+    @apply text-subheadline;
+    font-family: var(--font-header);
+  }
+
+  /* Paragraph & Body Text */
+  p {
+    @apply text-body-1-regular;
+  }
+
+  /* Small & Auxiliary Text */
+  small {
+    @apply text-caption-regular;
+  }
+
+  /* Links */
+  a {
+    @apply text-orange-500 hover:text-orange-600 transition-colors;
+  }
+
+  /* Buttons */
+  button {
+    @apply text-body-1-medium;
+    font-family: var(--font-sans);
+  }
+
+  /* Form Elements */
+  input,
+  textarea,
+  select {
+    @apply text-body-1-regular;
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+  }
+
+  label {
+    @apply text-body-2-medium;
+    color: var(--color-text-secondary);
+  }
+
+  /* Code Elements */
+  code,
+  pre {
+    font-family: var(--font-mono);
+  }
 }

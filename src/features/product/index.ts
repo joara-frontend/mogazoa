@@ -1,1 +1,1 @@
-export const productFeature = 'product feature placeholder';
+export const productFeature = "product feature placeholder";

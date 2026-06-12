@@ -1,1 +1,1 @@
-export const reviewFeature = 'review feature placeholder';
+export const reviewFeature = "review feature placeholder";

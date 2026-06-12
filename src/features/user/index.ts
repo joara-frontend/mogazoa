@@ -1,1 +1,1 @@
-export const userFeature = 'user feature placeholder';
+export const userFeature = "user feature placeholder";
