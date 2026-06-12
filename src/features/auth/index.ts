@@ -1,1 +1,1 @@
-export const authFeature = 'auth feature placeholder';
+export const authFeature = "auth feature placeholder";

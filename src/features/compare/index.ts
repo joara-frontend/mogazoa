@@ -1,1 +1,1 @@
-export const compareFeature = 'compare feature placeholder';
+export const compareFeature = "compare feature placeholder";
