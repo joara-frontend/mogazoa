@@ -6,12 +6,12 @@ import "./globals.css";
 const cafe24Supermagic = localFont({
   src: [
     {
-      path: "../public/fonts/Cafe24Supermagic-Regular.woff2",
+      path: "../../public/fonts/Cafe24Supermagic-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/Cafe24Supermagic-Bold.woff2",
+      path: "../../public/fonts/Cafe24Supermagic-Bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -22,22 +22,22 @@ const cafe24Supermagic = localFont({
 const spoqaHanSansNeo = localFont({
   src: [
     {
-      path: "../public/fonts/SpoqaHanSansNeo-Thin.woff2",
+      path: "../../public/fonts/SpoqaHanSansNeo-Thin.woff2",
       weight: "100",
       style: "normal",
     },
     {
-      path: "../public/fonts/SpoqaHanSansNeo-Regular.woff2",
+      path: "../../public/fonts/SpoqaHanSansNeo-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/SpoqaHanSansNeo-Medium.woff2",
+      path: "../../public/fonts/SpoqaHanSansNeo-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../public/fonts/SpoqaHanSansNeo-Bold.woff2",
+      path: "../../public/fonts/SpoqaHanSansNeo-Bold.woff2",
       weight: "700",
       style: "normal",
     },
@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ko"
       className={`${cafe24Supermagic.variable} ${spoqaHanSansNeo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
