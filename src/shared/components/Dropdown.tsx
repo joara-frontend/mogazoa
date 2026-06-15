@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 
 export type DropdownOption = {
@@ -152,8 +153,10 @@ export const Dropdown = React.forwardRef<HTMLButtonElement, DropdownProps>(
             {selectedLabel}
           </span>
 
-          <img
-            className={`w-[24px] h-[24px] transform transition-transform duration-150 ${open ? "rotate-180" : "rotate-0"}`}
+          <Image
+            width={24}
+            height={24}
+            className={`transform transition-transform duration-150 ${open ? "rotate-180" : "rotate-0"}`}
             src="/icons/dropdown.svg"
             alt=""
             aria-hidden="true"

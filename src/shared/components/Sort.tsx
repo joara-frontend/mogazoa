@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 
 export type SortOption = {
@@ -165,11 +166,13 @@ export const Sort = React.forwardRef<HTMLButtonElement, SortProps>(
           <span className="flex-1 text-[14px] sm:text-[16px]">
             {selectedLabel}
           </span>
-          <img
+          <Image
             src="/icons/sort.svg"
             alt=""
             aria-hidden="true"
-            className={`w-[20px] h-[20px] transition-transform duration-150 ${open ? "rotate-180 text-[var(--color-gray-500)]" : "text-[#6e6e82]"}`}
+            width={20}
+            height={20}
+            className={`transition-transform duration-150 ${open ? "rotate-180 text-[var(--color-gray-500)]" : "text-[#6e6e82]"}`}
           />
         </button>
 
